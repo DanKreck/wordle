@@ -25,11 +25,19 @@ export class GameComponent implements OnInit {
   }
 
   handleGuess(event: any): void {
-
+    
     let guess = event.target.value.toUpperCase();
     
+    const capped = WORDS.map(words => words.toUpperCase());
+
     // make sure the guess has exactly 5 characters
     if (guess.length !== this.WORD_LENGTH) {
+      return;
+    }
+
+    if(!capped.includes(guess)){
+      alert("Please enter a valid word.");
+      event.target.value = '';
       return;
     }
 
@@ -41,6 +49,8 @@ export class GameComponent implements OnInit {
       setTimeout(function(){
         alert("You won!");
       }, 0); 
+
+      
     }
 
     // is this the final guess? 
@@ -92,5 +102,9 @@ export class GameComponent implements OnInit {
 
     return isMatch;
   }
+
+  reloadCurrentPage() {
+    window.location.reload();
+   }
 
 }
