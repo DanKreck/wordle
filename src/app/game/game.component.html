@@ -1,5 +1,19 @@
+<h1 id="toptitle">w0rd</h1>
+<h3>You have {{NUM_ROWS - rows.length}} guesses left</h3>
+<p>{{solution}}</p>
+<div id="keyboard">
+  <h1><span 
+  *ngFor="let letter of LETTERS.split('')"
+  class="tile"
+  [class.letter-guess]="isGuess(letter)"
+  [class.letter-match]="isLetterMatch(letter)"
+  [class.location-match]="isLocationMatch(letter)"
+  >{{ letter }}</span></h1>
+</div>
+<hr>
+<div id="inputbox">
 <input id="guess" (keyup.enter)="handleGuess($event)">
-
+</div>
 <div id="grid">
   <div *ngFor="let row of rows" class="row">
     <span 
@@ -11,12 +25,3 @@
   </div>
 </div>
 
-<div id="keyboard">
-  <span 
-    *ngFor="let letter of LETTERS.split('')"
-    class="tile"
-    [class.letter-guess]="isGuess(letter)"
-    [class.letter-match]="isLetterMatch(letter)"
-    [class.location-match]="isLocationMatch(letter)"
-    >{{ letter }}</span>
-</div>

@@ -1,6 +1,7 @@
 body {
   font-size: 62.5%;
   position: relative;
+  
 }
 .letter-guess {
   background-color: rgb(120, 124, 126);
@@ -13,6 +14,8 @@ body {
 }
 #grid {
   font-size: 1.6em;
+  text-align: center;
+  font-size: 44pt;
 }
 .row .tile, #keyboard .tile {
   color: white;
@@ -26,11 +29,31 @@ body {
 }
 #guess {
   text-transform: uppercase;
+  font-size: 30pt;
 }
 #keyboard {
-  position: absolute;
-  bottom: 0;
+  position: relative;
+  text-align: center;
 }
 span {
   background-color: rgb(211, 214, 218);
+}
+
+#toptitle{
+  text-align: center;
+  font-size: 55pt;
+  font-style: italic;
+  color: darkcyan;
+}
+#inputbox{
+  text-align: center;
+  ;
+}
+h3 {
+  text-align: center;
+  color: darkcyan;
+}
+p {
+  text-align: center;
+  opacity: 30%;
 }

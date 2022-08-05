@@ -1,4 +1,7 @@
+
 import { Component, OnInit } from '@angular/core';
+
+import { WORDS } from '../../../src/words.js'; 
 
 @Component({
   selector: 'app-game',
@@ -7,15 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GameComponent implements OnInit {
 
-  solution: string;
+  solution: string = WORDS[Math.floor(Math.random() * WORDS.length)].toUpperCase();
   rows: string[] = [];
   NUM_ROWS: number = 6;
   WORD_LENGTH: number = 5;
-
+  
   LETTERS: string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
 
   constructor() { 
-    this.solution = "STARE";
+    
   }
 
   ngOnInit(): void {
@@ -24,7 +27,7 @@ export class GameComponent implements OnInit {
   handleGuess(event: any): void {
 
     let guess = event.target.value.toUpperCase();
-
+    
     // make sure the guess has exactly 5 characters
     if (guess.length !== this.WORD_LENGTH) {
       return;
@@ -32,7 +35,7 @@ export class GameComponent implements OnInit {
 
     // put the guess in this.rows
     this.rows.push(guess);
-
+    
     // did they get answer?
     if (guess === this.solution) {
       setTimeout(function(){
