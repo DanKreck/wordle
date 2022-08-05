@@ -1,0 +1,17 @@
+<input id="guess">
+
+<div id="grid">
+  <div *ngFor="let row of rows" class="row">
+    <span 
+      *ngFor="let char of row.split(''); let i = index" 
+      class="letter-guess tile"
+      >{{ char }}</span>
+  </div>
+</div>
+
+<div id="keyboard">
+  <span 
+    *ngFor="let letter of LETTERS.split('')"
+    class="tile"
+    >{{ letter }}</span>
+</div>

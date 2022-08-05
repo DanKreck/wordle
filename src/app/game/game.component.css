@@ -1,0 +1,32 @@
+body {
+  font-size: 62.5%;
+  position: relative;
+}
+.letter-guess {
+  background-color: gray;
+}
+.letter-match {
+  background-color: yellow;
+}
+.location-match {
+  background-color: green;
+}
+#grid {
+  font-size: 1.6em;
+}
+.row .tile, #keyboard .tile {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  text-align: center;
+  line-height: 1.25em;
+  margin: .25em;
+  border: 1px solid gray;
+}
+#guess {
+  text-transform: uppercase;
+}
+#keyboard {
+  position: absolute;
+  bottom: 0;
+}
