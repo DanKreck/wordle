@@ -1,10 +1,12 @@
-<input id="guess">
+<input id="guess" (keyup.enter)="handleGuess($event)">
 
 <div id="grid">
   <div *ngFor="let row of rows" class="row">
     <span 
       *ngFor="let char of row.split(''); let i = index" 
       class="letter-guess tile"
+      [class.letter-match]="solution.includes(char)"
+      [class.location-match]="solution[i] === char"
       >{{ char }}</span>
   </div>
 </div>
@@ -13,5 +15,8 @@
   <span 
     *ngFor="let letter of LETTERS.split('')"
     class="tile"
+    [class.letter-guess]="isGuess(letter)"
+    [class.letter-match]="isLetterMatch(letter)"
+    [class.location-match]="isLocationMatch(letter)"
     >{{ letter }}</span>
 </div>

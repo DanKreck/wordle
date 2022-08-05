@@ -3,25 +3,26 @@ body {
   position: relative;
 }
 .letter-guess {
-  background-color: gray;
+  background-color: rgb(120, 124, 126);
 }
 .letter-match {
-  background-color: yellow;
+  background-color: rgb(201, 180, 88);
 }
 .location-match {
-  background-color: green;
+  background-color: rgb(106, 170, 100);
 }
 #grid {
   font-size: 1.6em;
 }
 .row .tile, #keyboard .tile {
+  color: white;
+  font-family: sans-serif;
   display: inline-block;
-  width: 1.25em;
-  height: 1.25em;
+  width: 1.4em;
+  height: 1.4em;
   text-align: center;
-  line-height: 1.25em;
+  line-height: 1.4em;
   margin: .25em;
-  border: 1px solid gray;
 }
 #guess {
   text-transform: uppercase;
@@ -29,4 +30,7 @@ body {
 #keyboard {
   position: absolute;
   bottom: 0;
+}
+span {
+  background-color: rgb(211, 214, 218);
 }
